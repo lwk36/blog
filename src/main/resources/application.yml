@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: blog
+  datasource:
+    url: jdbc:mysql://localhost:3308/blog?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jwt:
+  secret: eMV8ND7S1ErNlmqyY/P45woXmmkcXAd03v8qyJ08B3okD4Rp2j4zKcAEUD1uOdl48mV7Wd0CK55cOOGDBkQbKA==
+  expiration: 864000
+
+mybatis-plus:
+  type-aliases-package: com.blog.pojo
+  mapper-locations: classpath*:mapper/*.xml
+
+logging:
+  level:
+    root: debug
