@@ -60,7 +60,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http,@Qualifier("jwtAuthenticationFilter") JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/login","/register").permitAll()
+                        .requestMatchers("/auth/login","/auth/register").permitAll()
                         .requestMatchers("/post/**").permitAll()
                         .anyRequest().authenticated()
                 )
